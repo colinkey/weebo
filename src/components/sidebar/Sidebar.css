@@ -1,0 +1,45 @@
+.sidebar {
+  height: 100%;
+  background-color: var(--dark-brown);
+  color: var(--light-brown);
+  text-align: center;
+}
+
+.nav-list-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.nav-list-item {
+  list-style: none;
+  padding: 5px;
+  overflow: auto;
+}
+
+.nav-list-item:last-of-type {
+  margin-top: auto;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  border-radius: 5px 0 0 5px;
+  display: block;
+}
+
+.nav-link:hover {
+  color: var(--yellow);
+}
+
+.nav-icon {
+  font-size: 2.6em;
+  padding: 5px;
+}
+
+.nav-active {
+  background-color: var(--tan);
+  color: var(--yellow);
+  margin-right: -5px;
+}

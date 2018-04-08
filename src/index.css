@@ -1,5 +1,22 @@
-body {
+* {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+html {
+  --yellow: #ba8e3f;
+  --dark-brown: #412c20;
+  --light-brown: #8e714b;
+  --tan: #c7b292;
+  --lavender: #a594a1;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
 }
