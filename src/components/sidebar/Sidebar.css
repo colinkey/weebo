@@ -1,7 +1,7 @@
 .sidebar {
   height: 100%;
-  background-color: var(--dark-brown);
-  color: var(--light-brown);
+  background-color: var(--dark-blue);
+  color: var(--med-blue);
   text-align: center;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .nav-link:hover {
-  color: var(--yellow);
+  color: var(--light-blue);
 }
 
 .nav-icon {
@@ -39,7 +39,7 @@
 }
 
 .nav-active {
-  background-color: var(--tan);
-  color: var(--yellow);
+  background-color: var(--teal-green);
+  color: var(--light-blue);
   margin-right: -5px;
 }

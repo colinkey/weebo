@@ -6,9 +6,10 @@ import Timelog from "./timelog/Timelog";
 import Highlights from "./highlights/Highlights";
 import Settings from "./settings/Settings";
 
+import "./ModuleContainer.css";
+
 const ModuleContainer = () => (
-  <div className="module module-container">
-    <p>I'm the module container</p>
+  <div className="module-container">
     <Switch>
       <Route exact path="/home" component={Welcome} />
       <Route exact path="/timelog" component={Timelog} />

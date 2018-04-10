@@ -2,19 +2,16 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-}
-
-html {
   --yellow: #ba8e3f;
   --dark-brown: #412c20;
   --light-brown: #8e714b;
   --tan: #c7b292;
   --lavender: #a594a1;
-}
-
-html,
-body {
-  height: 100%;
+  --dark-blue: #20265e;
+  --med-blue: #1c5eb5;
+  --light-blue: #53a2be;
+  --dark-teal: #176087;
+  --teal-green: #337b87;
 }
 
 body {
