@@ -1,0 +1,7 @@
+.module-highlights {
+  display: flex;
+}
+
+.highlight-container {
+  flex: 1;
+}

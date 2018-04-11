@@ -1,0 +1,11 @@
+.highlight textarea {
+  resize: none;
+  width: 300px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.highlight h2 {
+  font-size: 1em;
+}

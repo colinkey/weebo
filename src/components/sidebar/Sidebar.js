@@ -17,7 +17,7 @@ const Sidebar = () => (
           className="nav-link"
           activeClassName="nav-active"
         >
-          <i class="fas fa-clock nav-icon" />
+          <i class="fas fa-clock nav-icon" /> Timelog
         </NavLink>
       </li>
       <li className="nav-list-item">
@@ -26,7 +26,7 @@ const Sidebar = () => (
           className="nav-link"
           activeClassName="nav-active"
         >
-          <i class="fas fa-list-alt nav-icon" />
+          <i class="fas fa-list-alt nav-icon" /> Highlights
         </NavLink>
       </li>
       <li className="nav-list-item">
@@ -36,7 +36,7 @@ const Sidebar = () => (
           className="nav-link"
           activeClassName="nav-active"
         >
-          <i class="fas fa-wrench nav-icon" />
+          <i class="fas fa-wrench nav-icon" /> Settings
         </NavLink>
       </li>
     </ul>

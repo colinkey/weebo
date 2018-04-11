@@ -1,4 +1,11 @@
 .module-container {
-  background-color: var(--teal-green);
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.module {
+  width: 100%;
+  height: 100%;
 }

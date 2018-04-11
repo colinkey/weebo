@@ -1,8 +1,8 @@
 .sidebar {
   height: 100%;
-  background-color: var(--dark-blue);
-  color: var(--med-blue);
-  text-align: center;
+  background-color: #941b0c;
+  color: white;
+  width: 200px;
 }
 
 .nav-list-container {
@@ -10,12 +10,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding-left: 10px;
 }
 
 .nav-list-item {
   list-style: none;
   padding: 5px;
   overflow: auto;
+  font-size: 1.3em;
 }
 
 .nav-list-item:last-of-type {
@@ -25,21 +27,20 @@
 .nav-link {
   text-decoration: none;
   color: inherit;
-  border-radius: 5px 0 0 5px;
+  /* border-radius: 5px 0 0 5px; */
   display: block;
+  padding: 8px;
 }
 
 .nav-link:hover {
-  color: var(--light-blue);
+  border-left: 2px solid white;
 }
 
 .nav-icon {
-  font-size: 2.6em;
-  padding: 5px;
 }
 
 .nav-active {
-  background-color: var(--teal-green);
-  color: var(--light-blue);
+  background-color: white;
+  color: #941b0c;
   margin-right: -5px;
 }
