@@ -8,35 +8,32 @@ const Sidebar = () => (
     <ul className="nav-list-container">
       <li className="nav-list-item">
         <NavLink to="/home" className="nav-link" activeClassName="nav-active">
-          <i class="fas fa-home nav-icon" />
+          <i className="fas fa-home nav-icon" />
         </NavLink>
       </li>
       <li className="nav-list-item">
-        <NavLink
-          to="/timelog"
-          className="nav-link"
-          activeClassName="nav-active"
-        >
-          <i class="fas fa-clock nav-icon" /> Timelog
+        <NavLink to="/timelog" className="nav-link" activeClassName="nav-active">
+          <i className="fas fa-clock nav-icon" /> Timelog
         </NavLink>
       </li>
       <li className="nav-list-item">
-        <NavLink
-          to="/highlights"
-          className="nav-link"
-          activeClassName="nav-active"
-        >
-          <i class="fas fa-list-alt nav-icon" /> Highlights
+        <NavLink to="/highlights" className="nav-link" activeClassName="nav-active">
+          <i className="fas fa-list-alt nav-icon" /> Highlights
         </NavLink>
       </li>
       <li className="nav-list-item">
-        <NavLink
-          to="/settings"
-          alt="Settings"
-          className="nav-link"
-          activeClassName="nav-active"
-        >
-          <i class="fas fa-wrench nav-icon" /> Settings
+        <NavLink to="/buildTracker" className="nav-link" activeClassName="nav-active">
+          <i className="fas fa-list-alt nav-icon" /> Build Tracker
+        </NavLink>
+      </li>
+      <li className="nav-list-item">
+        <NavLink to="/notepad" className="nav-link" activeClassName="nav-active">
+          <i className="fas fa-list-alt nav-icon" /> Notepad
+        </NavLink>
+      </li>
+      <li className="nav-list-item">
+        <NavLink to="/settings" alt="Settings" className="nav-link" activeClassName="nav-active">
+          <i className="fas fa-wrench nav-icon" /> Settings
         </NavLink>
       </li>
     </ul>
