@@ -1,41 +1,32 @@
 import React from "react";
 
+import CheckboxSwitch from "./CheckboxSwitch";
+
+import "./Settings.css";
+
 const Settings = props => (
-  <div>
-    <p>Enabled modules</p>
-    <p>{props.test}</p>
-    <input
-      type="checkbox"
-      id="timelog-enabled"
-      onChange={e => props.toggleEnabledModule(e)}
-      name="timelog"
-      checked={props.enabledModules.timelog ? true : false}
+  <div className="settings-section module-settings">
+    <h3 className="settings-header">Enabled modules</h3>
+    <CheckboxSwitch
+      toggleEnabledModule={props.toggleEnabledModule}
+      module={props.enabledModules.timelog}
+      moduleName="timelog"
     />
-    <label htmlFor="timelog-enabled">Timelog</label>
-    <input
-      type="checkbox"
-      id="highlights-enabled"
-      onChange={e => props.toggleEnabledModule(e)}
-      name="highlights"
-      checked={props.enabledModules.highlights ? true : false}
+    <CheckboxSwitch
+      toggleEnabledModule={props.toggleEnabledModule}
+      module={props.enabledModules.highlights}
+      moduleName="highlights"
     />
-    <label htmlFor="highlights-enabled">Highlights</label>
-    <input
-      type="checkbox"
-      id="build-tracker-enabled"
-      onChange={e => props.toggleEnabledModule(e)}
-      name="buildTracker"
-      checked={props.enabledModules.buildTracker ? true : false}
+    <CheckboxSwitch
+      toggleEnabledModule={props.toggleEnabledModule}
+      module={props.enabledModules.buildTracker}
+      moduleName="buildTracker"
     />
-    <label htmlFor="build-tracker-enabled">Build Tracker</label>
-    <input
-      type="checkbox"
-      id="notepad-enabled"
-      onChange={e => props.toggleEnabledModule(e)}
-      name="notepad"
-      checked={props.enabledModules.notepad ? true : false}
+    <CheckboxSwitch
+      toggleEnabledModule={props.toggleEnabledModule}
+      module={props.enabledModules.notepad}
+      moduleName="notepad"
     />
-    <label htmlFor="notepad-enabled">Notepad</label>
   </div>
 );
 

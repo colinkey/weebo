@@ -31,7 +31,10 @@ class App extends Component {
     return (
       <div className="App">
         <Sidebar enabledModules={this.state.enabledModules} />
-        <ModuleContainer toggleEnabledModule={this.toggleEnabledModule} enabledModules={this.state.enabledModules} />
+        <ModuleContainer
+          toggleEnabledModule={this.toggleEnabledModule}
+          enabledModules={this.state.enabledModules}
+        />
       </div>
     );
   }

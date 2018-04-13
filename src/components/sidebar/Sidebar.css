@@ -2,7 +2,7 @@
   height: 100%;
   background-color: #941b0c;
   color: white;
-  width: 250px;
+  width: 200px;
 }
 
 .nav-list-container {
@@ -11,36 +11,4 @@
   flex-direction: column;
   justify-content: space-around;
   padding-left: 10px;
-}
-
-.nav-list-item {
-  list-style: none;
-  padding: 5px;
-  overflow: auto;
-  font-size: 1.3em;
-}
-
-.nav-list-item:last-of-type {
-  margin-top: auto;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: inherit;
-  /* border-radius: 5px 0 0 5px; */
-  display: block;
-  padding: 8px;
-}
-
-.nav-link:hover {
-  border-left: 2px solid white;
-}
-
-.nav-icon {
-}
-
-.nav-active {
-  background-color: white;
-  color: #941b0c;
-  margin-right: -5px;
 }
