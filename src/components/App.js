@@ -18,23 +18,20 @@ class App extends Component {
 
   toggleEnabledModule = e => {
     let module = e.target.name;
-    this.setState(
-      {
-        ...this.state,
-        enabledModules: {
-          ...this.state.enabledModules,
-          [module]: !this.state.enabledModules[module]
-        }
-      },
-      console.log(this.state.enabledModules)
-    );
+    this.setState({
+      ...this.state,
+      enabledModules: {
+        ...this.state.enabledModules,
+        [module]: !this.state.enabledModules[module]
+      }
+    });
   };
 
   render() {
     return (
       <div className="App">
-        <Sidebar />
-        <ModuleContainer toggleEnabledModule={this.toggleEnabledModule} test={this.testStr} />
+        <Sidebar enabledModules={this.state.enabledModules} />
+        <ModuleContainer toggleEnabledModule={this.toggleEnabledModule} enabledModules={this.state.enabledModules} />
       </div>
     );
   }

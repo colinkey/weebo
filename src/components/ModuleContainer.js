@@ -19,7 +19,7 @@ const ModuleContainer = props => (
       <Route exact path="/buildtracker" component={BuildTracker} />
       <Route exact path="/notepad" component={Notepad} />
       {/* <Route exact path="/settings" component={Settings} toggleEnabledModule={props.toggleEnabledModule} /> */}
-      <Route exact path="/settings" render={() => <Settings toggleEnabledModule={props.toggleEnabledModule} />} />
+      <Route exact path="/settings" render={() => <Settings toggleEnabledModule={props.toggleEnabledModule} enabledModules={props.enabledModules} />} />
     </Switch>
   </div>
 );
