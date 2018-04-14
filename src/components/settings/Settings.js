@@ -5,7 +5,7 @@ import CheckboxSwitch from "./CheckboxSwitch";
 import "./Settings.css";
 
 const Settings = props => (
-  <div className="settings-section module-settings">
+  <div className="settings-section card module-settings">
     <h3 className="settings-header">Enabled modules</h3>
     <CheckboxSwitch
       toggleEnabledModule={props.toggleEnabledModule}

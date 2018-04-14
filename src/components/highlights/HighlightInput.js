@@ -1,12 +1,12 @@
 import React from "react";
 
-import "./HighlightEntry.css";
+import "./HighlightInput.css";
 
-const HighlightEntry = props => (
+const HighlightInput = props => (
   <div className="highlight">
     <h2>{props.title}</h2>
     <textarea />
   </div>
 );
 
-export default HighlightEntry;
+export default HighlightInput;

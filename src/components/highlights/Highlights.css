@@ -4,4 +4,12 @@
 
 .highlight-container {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.highlight-container-title {
+  /* text-decoration: underline; */
+  border-bottom: 2px solid #eef;
 }
