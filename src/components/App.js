@@ -6,6 +6,8 @@ import "./App.css";
 import Sidebar from "./sidebar/Sidebar";
 import ModuleContainer from "./ModuleContainer";
 
+const electron = window.require("electron");
+
 class App extends Component {
   state = {
     enabledModules: {
@@ -14,7 +16,8 @@ class App extends Component {
       buildTracker: true,
       notepad: true
     },
-    highlights: {}
+    highlights: {},
+    value: 0
   };
 
   toggleEnabledModule = e => {
@@ -28,9 +31,28 @@ class App extends Component {
     });
   };
 
+  sendElectronMessage = val => {
+    electron.ipcRenderer.send("send-to-main", val);
+  };
+
+  getElectronMessages = () => {
+    electron.ipcRenderer.on("send-to-render", (event, arg) =>
+      this.setState({
+        ...this.state,
+        value: arg
+      })
+    );
+  };
+
+  componentDidMount() {
+    this.getElectronMessages();
+  }
+
   render() {
     return (
       <div className="App">
+        <button onClick={() => this.sendElectronMessage(this.state.value)}>Click me</button>
+        <p>{this.state.value}</p>
         <Sidebar enabledModules={this.state.enabledModules} />
         <ModuleContainer
           toggleEnabledModule={this.toggleEnabledModule}

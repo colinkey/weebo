@@ -7,6 +7,8 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require("path");
 const url = require("url");
 
+const DataStore = require("nedb");
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
@@ -27,6 +29,11 @@ function createWindow() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null;
+  });
+
+  electron.ipcMain.on("send-to-main", (event, arg) => {
+    console.log(arg);
+    mainWindow.send("send-to-render", `${parseInt(arg) + 2}`);
   });
 }
 
@@ -54,3 +61,9 @@ app.on("activate", function() {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+const db = new DataStore({
+  filename: "C:\\users\\Colin\\dev\\weebo\\userData"
+});
+
+db.loadDatabase();
