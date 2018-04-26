@@ -13,7 +13,8 @@ class App extends Component {
       highlights: true,
       buildTracker: true,
       notepad: true
-    }
+    },
+    highlights: {}
   };
 
   toggleEnabledModule = e => {
@@ -34,6 +35,7 @@ class App extends Component {
         <ModuleContainer
           toggleEnabledModule={this.toggleEnabledModule}
           enabledModules={this.state.enabledModules}
+          highlights={this.state.highlights}
         />
       </div>
     );

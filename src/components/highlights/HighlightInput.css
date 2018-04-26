@@ -1,11 +1,19 @@
-.highlight textarea {
-  resize: none;
-  width: 300px;
-  height: 100px;
-  padding: 5px;
-  border-radius: 5px;
+.highlight {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
-.highlight h2 {
-  font-size: 1em;
+.highlight-input {
+  width: 100%;
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.highlight-control-button {
+  background-color: transparent;
+  border: none;
+  color: green;
+  font-size: 1.2em;
 }

@@ -15,7 +15,7 @@ const ModuleContainer = props => (
     <Switch>
       <Route exact path="/home" component={Welcome} />
       <Route exact path="/timelog" component={Timelog} />
-      <Route exact path="/highlights" component={Highlights} />
+      <Route exact path="/highlights" render={() => <Highlights highlights={props.highlights} />} />
       <Route exact path="/buildtracker" component={BuildTracker} />
       <Route exact path="/notepad" component={Notepad} />
       <Route

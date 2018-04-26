@@ -4,8 +4,10 @@ import "./HighlightInput.css";
 
 const HighlightInput = props => (
   <div className="highlight">
-    <h2>{props.title}</h2>
-    <textarea />
+    <button className="highlight-control-button">
+      <i className="fas fa-plus" />
+    </button>
+    <input className="highlight-input" type="text" placeholder="Add item..." />
   </div>
 );
 
