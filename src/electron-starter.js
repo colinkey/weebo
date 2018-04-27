@@ -9,6 +9,10 @@ const url = require("url");
 
 const DataStore = require("nedb");
 
+const db = new DataStore({
+  filename: "C:\\users\\Colin\\dev\\weebo\\userData.db"
+});
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
@@ -29,6 +33,28 @@ function createWindow() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null;
+  });
+
+  electron.ipcMain.on("insert-doc", (event, arg) => {
+    db.insert(arg, function(err, newDoc) {
+      mainWindow.send("send-to-render", newDoc);
+    });
+  });
+
+  electron.ipcMain.on("update-doc", (event, arg) => {
+    db.update({}, arg, { returnUpdatedDocs: true }, function(err, numReplaced, affectedDocs) {
+      if (err) {
+        console.log(err);
+      } else {
+        mainWindow.send("send-to-render", affectedDocs);
+      }
+    });
+  });
+
+  electron.ipcMain.on("get-initial-data", event => {
+    db.find({}, function(err, docs) {
+      mainWindow.send("send-initial-data", docs);
+    });
   });
 
   electron.ipcMain.on("send-to-main", (event, arg) => {
@@ -61,9 +87,5 @@ app.on("activate", function() {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-
-const db = new DataStore({
-  filename: "C:\\users\\Colin\\dev\\weebo\\userData"
-});
 
 db.loadDatabase();
