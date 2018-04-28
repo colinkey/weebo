@@ -17,5 +17,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron": "electron ."
+  },
+  "devDependencies": {
+    "electron-react-devtools": "^0.5.3"
   }
 }

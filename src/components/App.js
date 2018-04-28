@@ -9,28 +9,28 @@ const electron = window.require("electron");
 
 class App extends Component {
   state = {
-    // enabledModules: {
-    //   timelog: true,
-    //   highlights: true,
-    //   buildTracker: true,
-    //   notepad: true
-    // },
-    // highlights: {},
-    // value: 0
     loading: true
   };
 
   toggleEnabledModule = e => {
     let module = e.target.name;
+    let newState = {
+      ...this.state,
+      enabledModules: {
+        ...this.state.enabledModules,
+        [module]: !this.state.enabledModules[module]
+      }
+    };
     this.setState(
-      {
-        ...this.state,
-        enabledModules: {
-          ...this.state.enabledModules,
-          [module]: !this.state.enabledModules[module]
-        }
+      prevState => {
+        return newState;
       },
-      this.sendElectronMessage("update-doc", this.state)
+      this.sendElectronMessage("update-doc", [
+        { _id: this.state._id },
+        {
+          enabledModules: newState.enabledModules
+        }
+      ])
     );
   };
 
@@ -40,15 +40,10 @@ class App extends Component {
 
   initalDataListener = () => {
     electron.ipcRenderer.on("send-initial-data", (event, arg) => {
-      console.log(arg);
-      arg.map(obj => {
-        console.log(obj);
-        this.setState({
-          ...this.state,
-          obj
-        });
+      this.setState({
+        ...arg[0],
+        loading: false
       });
-      console.log(this.state);
     });
   };
 
@@ -57,6 +52,7 @@ class App extends Component {
   };
 
   componentDidMount() {
+    console.log('require("electron-react-devtools").install()');
     this.initalDataListener();
     this.sendElectronMessage("get-initial-data");
     this.mainProcessListener();

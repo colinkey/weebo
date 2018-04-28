@@ -1,0 +1,27 @@
+.note-container {
+  flex: 1 1 auto;
+  min-width: 200px;
+  max-width: 375px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* .collapsed {
+  height: 200px;
+} */
+
+.note-controls {
+  margin-top: auto;
+  align-self: flex-end;
+  color: lightgrey;
+}
+
+.note-controls svg {
+  margin: 5px;
+}
+
+.note-controls svg:hover {
+  color: #941b0c;
+}

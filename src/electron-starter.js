@@ -10,7 +10,7 @@ const url = require("url");
 const DataStore = require("nedb");
 
 const db = new DataStore({
-  filename: "C:\\users\\Colin\\dev\\weebo\\userData.db"
+  filename: `${__dirname}\\userData.db`
 });
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -42,7 +42,11 @@ function createWindow() {
   });
 
   electron.ipcMain.on("update-doc", (event, arg) => {
-    db.update({}, arg, { returnUpdatedDocs: true }, function(err, numReplaced, affectedDocs) {
+    db.update(arg[0], { $set: arg[1] }, { returnUpdatedDocs: true }, function(
+      err,
+      numReplaced,
+      affectedDocs
+    ) {
       if (err) {
         console.log(err);
       } else {

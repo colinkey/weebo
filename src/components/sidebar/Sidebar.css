@@ -3,6 +3,7 @@
   background-color: #941b0c;
   color: white;
   width: 200px;
+  position: fixed;
 }
 
 .nav-list-container {
