@@ -1,4 +1,11 @@
 import React, { Component } from "react";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import {
+  faAngleDoubleDown,
+  faAngleDoubleUp,
+  faEdit,
+  faBan
+} from "@fortawesome/fontawesome-free-solid";
 
 import "./Note.css";
 
@@ -31,14 +38,18 @@ class Note extends Component {
         <div className="note-controls">
           {this.state.isExpandable ? (
             <button onClick={this.toggleExpandedNote}>
-              <i className={`fas fa-angle-double-${this.state.expanded ? "up" : "down"}`} />
+              {this.state.expanded ? (
+                <FontAwesomeIcon icon={faAngleDoubleUp} />
+              ) : (
+                <FontAwesomeIcon icon={faAngleDoubleDown} />
+              )}
             </button>
           ) : null}
           <button>
-            <i className="fas fa-edit" />
+            <FontAwesomeIcon icon={faEdit} />
           </button>
           <button>
-            <i className="fas fa-ban" />
+            <FontAwesomeIcon icon={faBan} />
           </button>
         </div>
       </div>
