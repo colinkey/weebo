@@ -1,16 +1,16 @@
 .note-container {
   flex: 1 1 auto;
-  min-width: 200px;
-  max-width: 375px;
+  max-width: 380px;
   min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  transition: height 2s ease-in-out;
 }
 
-/* .collapsed {
+.collapsed {
   height: 200px;
-} */
+}
 
 .note-controls {
   margin-top: auto;
@@ -18,10 +18,13 @@
   color: lightgrey;
 }
 
-.note-controls svg {
+.note-controls button {
   margin: 5px;
+  background-color: transparent;
+  color: inherit;
+  border: none;
 }
 
-.note-controls svg:hover {
+.note-controls button:hover {
   color: #941b0c;
 }
