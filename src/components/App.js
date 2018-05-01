@@ -9,6 +9,31 @@ const electron = window.require("electron");
 
 class App extends Component {
   state = {
+    enabledModules: {
+      buildTracker: true,
+      notepad: true,
+      timelog: true,
+      highlights: true
+    },
+    notes: [
+      {
+        noteTitle: "Title One",
+        noteBody: "This is a note body."
+      },
+      {
+        noteTitle: "Title Two",
+        noteBody: "This is a note body. This is a note body."
+      },
+      {
+        noteTitle: "Title Three",
+        noteBody: "This is a note body. This is a note body. This is a note body."
+      },
+      {
+        noteTitle: "Title Four",
+        noteBody:
+          "This is a note body. This is a note body. This is a note body. This is a note body."
+      }
+    ],
     loading: true
   };
 
@@ -70,6 +95,7 @@ class App extends Component {
               toggleEnabledModule={this.toggleEnabledModule}
               enabledModules={this.state.enabledModules}
               highlights={this.state.highlights}
+              notes={this.state.notes}
             />
           </React.Fragment>
         )}

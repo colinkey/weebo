@@ -6,7 +6,10 @@ import "./Notepad.css";
 
 const Notepad = props => (
   <div className="module module-notepad">
-    <Note noteTitle={"Hello"} noteBody={"This is the note body"} />
+    {props.notes.map((obj, index) => (
+      <Note noteTitle={obj.noteTitle} noteBody={obj.noteBody} key={index} />
+    ))}
+    {/* <Note noteTitle={"Hello"} noteBody={"This is the note body"} />
     <Note
       noteTitle={"Hello"}
       noteBody={
@@ -20,7 +23,7 @@ const Notepad = props => (
       }
     />
     <Note noteTitle={"Hello"} noteBody={"This is the note body"} />
-    <Note noteTitle={"Hello"} noteBody={"This is the note body"} />
+    <Note noteTitle={"Hello"} noteBody={"This is the note body"} /> */}
   </div>
 );
 

@@ -4,6 +4,7 @@ import {
   faAngleDoubleDown,
   faAngleDoubleUp,
   faEdit,
+  faSave,
   faBan
 } from "@fortawesome/fontawesome-free-solid";
 
@@ -14,9 +15,16 @@ class Note extends Component {
     super(props);
     this.state = {
       isExpandable: props.noteBody.length > 240,
+      isEditable: false,
       expanded: false
     };
   }
+
+  toggleEditNote = () => {
+    this.setState({
+      isEditable: !this.state.isEditable
+    });
+  };
 
   toggleExpandedNote = () => {
     this.setState({
@@ -29,12 +37,30 @@ class Note extends Component {
       <div
         className={this.state.expanded ? "note-container card" : "note-container card collapsed"}
       >
-        <h2 className="note-title">{this.props.noteTitle}</h2>
-        <p className="note-body">
-          {this.props.noteBody.length > 240 && !this.state.expanded
-            ? `${this.props.noteBody.substring(0, 240)}...`
-            : this.props.noteBody}
-        </p>
+        {this.state.isEditable ? (
+          <React.Fragment>
+            <input
+              type="text"
+              value={this.props.noteTitle}
+              onChange={this.handleTextChange}
+              name="noteTitle"
+            />
+            <textarea
+              value={this.props.noteBody}
+              onChange={this.handleTextChange}
+              name="noteBody"
+            />
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <h2 className="note-title">{this.props.noteTitle}</h2>
+            <p className="note-body">
+              {this.props.noteBody.length > 240 && !this.state.expanded
+                ? `${this.props.noteBody.substring(0, 240)}...`
+                : this.props.noteBody}
+            </p>
+          </React.Fragment>
+        )}
         <div className="note-controls">
           {this.state.isExpandable ? (
             <button onClick={this.toggleExpandedNote}>
@@ -46,7 +72,10 @@ class Note extends Component {
             </button>
           ) : null}
           <button>
-            <FontAwesomeIcon icon={faEdit} />
+            <FontAwesomeIcon
+              icon={this.state.isEditable ? faSave : faEdit}
+              onClick={this.toggleEditNote}
+            />
           </button>
           <button>
             <FontAwesomeIcon icon={faBan} />
@@ -56,26 +85,5 @@ class Note extends Component {
     );
   }
 }
-// const Note = props => (
-//   <div className={props.expanded ? "note-container card" : "note-container card collapsed"}>
-//     <h2 className="note-title">{props.noteTitle}</h2>
-//     <p className="note-body">
-//       {props.noteBody.length > 240 && !props.expanded
-//         ? `${props.noteBody.substring(0, 240)}...`
-//         : props.noteBody}
-//     </p>
-//     <div className="note-controls">
-//       {props.noteBody.length > 240 ? (
-//         props.expanded ? (
-//           <i className="fas fa-angle-double-up" onClick={() => props.toggleExpandedNote} />
-//         ) : (
-//           <i className="fas fa-angle-double-down" onClick={() => props.toggleExpandedNote} />
-//         )
-//       ) : null}
-//       <i className="fas fa-edit" />
-//       <i className="fas fa-ban" />
-//     </div>
-//   </div>
-// );
 
 export default Note;
