@@ -76,6 +76,30 @@ class App extends Component {
     electron.ipcRenderer.on("send-to-render", (event, arg) => console.log(arg));
   };
 
+  handleNoteTextChange = (e, index) => {
+    let type = e.target.name;
+    this.setState({
+      ...this.state,
+      notes: this.state.notes.map(note => {
+        if (this.state.notes.indexOf(note) === index) {
+          return {
+            ...note,
+            [type]: e.target.value
+          };
+        }
+        return note;
+      })
+    });
+  };
+
+  deleteNote = index => {
+    console.log(index);
+    let newArr = this.state.notes.filter((note, i) => i !== index);
+    this.setState({
+      notes: newArr
+    });
+  };
+
   componentDidMount() {
     console.log('require("electron-react-devtools").install()');
     this.initalDataListener();
@@ -96,6 +120,8 @@ class App extends Component {
               enabledModules={this.state.enabledModules}
               highlights={this.state.highlights}
               notes={this.state.notes}
+              handleNoteTextChange={this.handleNoteTextChange}
+              deleteNote={this.deleteNote}
             />
           </React.Fragment>
         )}

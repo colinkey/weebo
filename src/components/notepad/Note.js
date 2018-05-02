@@ -22,6 +22,7 @@ class Note extends Component {
 
   toggleEditNote = () => {
     this.setState({
+      isExpandable: this.props.noteBody.length > 240,
       isEditable: !this.state.isEditable
     });
   };
@@ -42,12 +43,12 @@ class Note extends Component {
             <input
               type="text"
               value={this.props.noteTitle}
-              onChange={this.handleTextChange}
+              onChange={e => this.props.handleNoteTextChange(e, this.props.id)}
               name="noteTitle"
             />
             <textarea
               value={this.props.noteBody}
-              onChange={this.handleTextChange}
+              onChange={e => this.props.handleNoteTextChange(e, this.props.id)}
               name="noteBody"
             />
           </React.Fragment>
@@ -71,13 +72,10 @@ class Note extends Component {
               )}
             </button>
           ) : null}
-          <button>
-            <FontAwesomeIcon
-              icon={this.state.isEditable ? faSave : faEdit}
-              onClick={this.toggleEditNote}
-            />
+          <button onClick={this.toggleEditNote}>
+            <FontAwesomeIcon icon={this.state.isEditable ? faSave : faEdit} />
           </button>
-          <button>
+          <button onClick={() => this.props.deleteNote(this.props.id)}>
             <FontAwesomeIcon icon={faBan} />
           </button>
         </div>

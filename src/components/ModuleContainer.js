@@ -17,7 +17,17 @@ const ModuleContainer = props => (
       <Route exact path="/timelog" component={Timelog} />
       <Route exact path="/highlights" render={() => <Highlights highlights={props.highlights} />} />
       <Route exact path="/buildtracker" component={BuildTracker} />
-      <Route exact path="/notepad" render={() => <Notepad notes={props.notes} />} />
+      <Route
+        exact
+        path="/notepad"
+        render={() => (
+          <Notepad
+            notes={props.notes}
+            handleNoteTextChange={props.handleNoteTextChange}
+            deleteNote={props.deleteNote}
+          />
+        )}
+      />
       <Route
         exact
         path="/settings"
