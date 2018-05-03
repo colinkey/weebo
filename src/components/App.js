@@ -100,6 +100,18 @@ class App extends Component {
     });
   };
 
+  createNote = () => {
+    this.setState({
+      notes: [
+        ...this.state.notes,
+        {
+          noteTitle: "",
+          noteBody: ""
+        }
+      ]
+    });
+  };
+
   componentDidMount() {
     console.log('require("electron-react-devtools").install()');
     this.initalDataListener();
@@ -122,6 +134,7 @@ class App extends Component {
               notes={this.state.notes}
               handleNoteTextChange={this.handleNoteTextChange}
               deleteNote={this.deleteNote}
+              createNote={this.createNote}
             />
           </React.Fragment>
         )}

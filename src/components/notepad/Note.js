@@ -15,7 +15,7 @@ class Note extends Component {
     super(props);
     this.state = {
       isExpandable: props.noteBody.length > 240,
-      isEditable: false,
+      isEditable: !props.noteTitle || !props.noteBody,
       expanded: false
     };
   }

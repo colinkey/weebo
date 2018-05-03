@@ -12,7 +12,6 @@
 .nav-link {
   text-decoration: none;
   color: inherit;
-  border-radius: 5px 0 0 5px;
   display: block;
   padding: 8px;
   transition: 0.15s;
@@ -20,14 +19,14 @@
 }
 
 .nav-link:hover {
-  border-left: 3px solid white;
+  border-left: 3px solid #45e8ad;
 }
 
 .nav-icon {
 }
 
 .nav-active {
-  background-color: white;
-  color: #941b0c;
+  color: #45e8ad;
   margin-right: -5px;
+  border-left: 3px solid #45e8ad;
 }

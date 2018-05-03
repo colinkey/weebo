@@ -4,3 +4,24 @@
   align-items: flex-start;
   align-content: flex-start;
 }
+
+.new-note {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.new-note button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.new-note-icon {
+  color: green;
+  font-size: 3em;
+  display: block;
+}

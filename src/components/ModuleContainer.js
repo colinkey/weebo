@@ -25,6 +25,7 @@ const ModuleContainer = props => (
             notes={props.notes}
             handleNoteTextChange={props.handleNoteTextChange}
             deleteNote={props.deleteNote}
+            createNote={props.createNote}
           />
         )}
       />
