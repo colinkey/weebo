@@ -18,10 +18,11 @@
   cursor: pointer;
   border: none;
   background-color: transparent;
+  color: white;
 }
 
 .new-note-icon {
-  color: green;
+  color: #45e8ad;
   font-size: 3em;
   display: block;
 }

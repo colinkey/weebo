@@ -1,6 +1,6 @@
 .note-container {
   flex: 1 1 auto;
-  max-width: 380px;
+  width: 350px;
   min-height: 200px;
   display: flex;
   flex-direction: column;
@@ -9,10 +9,10 @@
 }
 
 .note-container h2 {
-  color: white;
-  background-color: #941b0c;
-  margin: -10px -10px 5px -10px;
+  color: #45e8ad;
+  margin: -10px -5px 5px -5px;
   padding: 5px;
+  border-bottom: 3px solid #45e8ad;
 }
 
 .collapsed {
@@ -32,5 +32,5 @@
 }
 
 .note-controls button:hover {
-  color: #941b0c;
+  color: #45e8ad;
 }

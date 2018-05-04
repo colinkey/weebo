@@ -6,7 +6,7 @@ import "./Settings.css";
 
 const Settings = props => (
   <div className="settings-section card module-settings">
-    <h3 className="settings-header">Enabled modules</h3>
+    <h2 className="settings-header">Enabled modules</h2>
     <CheckboxSwitch
       toggleEnabledModule={props.toggleEnabledModule}
       module={props.enabledModules.timelog}
