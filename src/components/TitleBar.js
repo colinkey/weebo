@@ -8,7 +8,6 @@ class TitleBar extends React.Component {
   appWindow = remote.BrowserWindow.getFocusedWindow();
 
   closeWindow = () => {
-    console.log("firing!");
     this.appWindow.close();
   };
 
@@ -23,7 +22,7 @@ class TitleBar extends React.Component {
   render() {
     return (
       <div className="title-bar">
-        <h2 className="title-bar-title">weebo | from flubber, not the anime thing you twats</h2>
+        <p className="title-bar-title">weebo</p>
         <div className="title-bar-button-group">
           <button className="title-bar-button" onClick={() => this.minimizeWindow()}>
             _

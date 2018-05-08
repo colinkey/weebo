@@ -1,7 +1,31 @@
 .title-bar {
+  background-color: #202020;
+  color: #ededed;
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
   -webkit-app-region: drag;
+}
+
+.title-bar-title {
+  text-align: center;
+  flex: 2;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
 }
 
 .title-bar-button-group {
   -webkit-app-region: no-drag;
+}
+
+.title-bar-button {
+  border: none;
+  background-color: inherit;
+  padding: 3px 10px;
+  color: #ededed;
+  height: 100%;
+}
+
+.title-bar-button:hover {
+  background-color: #45e8ad;
 }
