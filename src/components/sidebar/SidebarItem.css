@@ -1,6 +1,6 @@
 .nav-list-item {
   list-style: none;
-  padding: 5px;
+  padding: 5px 5px 5px 0;
   overflow: auto;
   font-size: 1.3em;
 }

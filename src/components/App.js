@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import "./App.css";
 
+import TitleBar from "./TitleBar";
 import Sidebar from "./sidebar/Sidebar";
 import ModuleContainer from "./ModuleContainer";
 
@@ -121,24 +122,27 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        {this.state.loading ? (
-          <p>Loading... </p>
-        ) : (
-          <React.Fragment>
-            <Sidebar enabledModules={this.state.enabledModules} />
-            <ModuleContainer
-              toggleEnabledModule={this.toggleEnabledModule}
-              enabledModules={this.state.enabledModules}
-              highlights={this.state.highlights}
-              notes={this.state.notes}
-              handleNoteTextChange={this.handleNoteTextChange}
-              deleteNote={this.deleteNote}
-              createNote={this.createNote}
-            />
-          </React.Fragment>
-        )}
-      </div>
+      <React.Fragment>
+        <TitleBar />
+        <div className="App">
+          {this.state.loading ? (
+            <p>Loading... </p>
+          ) : (
+            <React.Fragment>
+              <Sidebar enabledModules={this.state.enabledModules} />
+              <ModuleContainer
+                toggleEnabledModule={this.toggleEnabledModule}
+                enabledModules={this.state.enabledModules}
+                highlights={this.state.highlights}
+                notes={this.state.notes}
+                handleNoteTextChange={this.handleNoteTextChange}
+                deleteNote={this.deleteNote}
+                createNote={this.createNote}
+              />
+            </React.Fragment>
+          )}
+        </div>
+      </React.Fragment>
     );
   }
 }
